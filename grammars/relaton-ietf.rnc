@@ -1,5 +1,11 @@
 include "biblio-standoc.rnc" {
 
+editorialgroup = element editorialgroup {
+  committee*
+}
+
+}
+
 DocumentType = "rfc" | "internet-draft"
 
 BibDataExtensionType &=
@@ -7,7 +13,7 @@ BibDataExtensionType &=
         ## listed on <http://www.ietf.org/iesg/area.html
         area*,
         ## Document stream of document described in https://tools.ietf.org/html/rfc7841
-        stream?, 
+        stream?,
         ## IP status of document. See https://tools.ietf.org/html/rfc7991#section-2.45.5
         ipr?,
         ## Processing instructions which will be added to generated RFC XML in the form `<?rfc keyword='value'?>
@@ -15,25 +21,19 @@ BibDataExtensionType &=
         ## Document consensus for this document       
         consensus?,
         ## Specifies whether formatter should include an index in generated files. If the source file has no `<iref>` elements, an index is never generated
-        index-include?, 
+        index-include?,
         ## Identifies a section that can be extracted from text. See https://tools.ietf.org/html/rfc7991#section-2.45.6
-        ipr-extract?, 
+        ipr-extract?,
         ## Specifies whether the prep tool for RFC XML should sort references
-        sort-refs?, 
+        sort-refs?,
         ## Specifies whether the RFC XML formatter should use symbolic references (such as "`[RFC2119]`") or not (such as "`[3]`")
         sym-refs?,
         ## Specifies whether the RFC XML formatter should contain a table of contents
-        toc-include?, 
+        toc-include?,
         ## Determines the depth of the table-of-contents; e.g. a value of `3` means three levels of heading are included
-        toc-depth?, 
+        toc-depth?,
         ## Display organization of author on front page of IAB documents. Applied to all organizations named in the document front matter
         show-on-front-page?
-
-editorialgroup = element editorialgroup {
-  committee*
-}
-
-}
 
 committee = element committee { IsoWorkgroup }
 
