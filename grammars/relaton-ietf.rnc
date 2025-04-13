@@ -4,9 +4,9 @@ editorialgroup = element editorialgroup {
   committee*
 }
 
-}
-
 DocumentType = "rfc" | "internet-draft"
+
+}
 
 BibDataExtensionType &=
         ## which IETF area this document relates to. Value should be either the full name or the abbreviation of one of the IETF areas as
